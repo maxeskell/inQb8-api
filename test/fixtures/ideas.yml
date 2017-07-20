@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  pitch: MyString
+  description: MyText
+  image: MyString
+  campaign_duration: 1
+  who_we_need: MyText
+  benefits_for_you: MyText
+
+two:
+  title: MyString
+  pitch: MyString
+  description: MyText
+  image: MyString
+  campaign_duration: 1
+  who_we_need: MyText
+  benefits_for_you: MyText
