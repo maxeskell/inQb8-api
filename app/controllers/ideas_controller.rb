@@ -5,7 +5,7 @@ class IdeasController < ApplicationController
   def index
     @ideas = Idea.all
 
-    render json: @ideas
+    render json: @ideas, include: ['users, comments, tags']
   end
 
   # GET /ideas/1
@@ -46,6 +46,6 @@ class IdeasController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def idea_params
-      params.require(:idea).permit(:title, :pitch, :description, :image, :campaign_duration, :who_we_need, :benefits_for_you)
+      params.require(:idea).permit(:title, :pitch, :description, :image, :campaign_duration, :who_we_need, :benefits_for_you, user_id, "lovers_ids"=>[], "joiners_ids"=>[], "tags_ids"=>[])
     end
 end
