@@ -1,4 +1,4 @@
-[User].each do |model|
+[User, Comment, Tag].each do |model|
   ActiveRecord::Base.connection.execute("TRUNCATE #{model.table_name} RESTART IDENTITY CASCADE")
 end
 
