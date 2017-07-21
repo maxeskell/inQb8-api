@@ -5,12 +5,12 @@ class TagsController < ApplicationController
   def index
     @tags = Tag.all
 
-    render json: @tags
+    render json: @tags, include: ['ideas']
   end
 
   # GET /tags/1
   def show
-    render json: @tag
+    render json: @tag, include: ['ideas']
   end
 
   # POST /tags
@@ -27,7 +27,7 @@ class TagsController < ApplicationController
   # PATCH/PUT /tags/1
   def update
     if @tag.update(tag_params)
-      render json: @tag
+      render json: @tag, include: ['ideas']
     else
       render json: @tag.errors, status: :unprocessable_entity
     end

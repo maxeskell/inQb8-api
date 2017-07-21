@@ -5,12 +5,12 @@ class CommentsController < ApplicationController
   def index
     @comments = Comment.all
 
-    render json: @comments, include: ['users, ideas']
+    render json: @comments, include: ['users', 'ideas']
   end
 
   # GET /comments/1
   def show
-    render json: @comment
+    render json: @comment, include: ['users', 'ideas']
   end
 
   # POST /comments
@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
   # PATCH/PUT /comments/1
   def update
     if @comment.update(comment_params)
-      render json: @comment
+      render json: @comment, include: ['users', 'ideas']
     else
       render json: @comment.errors, status: :unprocessable_entity
     end

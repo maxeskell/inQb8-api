@@ -5,12 +5,12 @@ class IdeasController < ApplicationController
   def index
     @ideas = Idea.all
 
-    render json: @ideas, include: ['users, comments, tags']
+    render json: @ideas, include: ['user', 'comments', 'tags']
   end
 
   # GET /ideas/1
   def show
-    render json: @idea
+    render json: @idea, include: ['user', 'comments', 'tags']
   end
 
   # POST /ideas
@@ -27,7 +27,7 @@ class IdeasController < ApplicationController
   # PATCH/PUT /ideas/1
   def update
     if @idea.update(idea_params)
-      render json: @idea
+      render json: @idea, include: ['user', 'comments', 'tags']
     else
       render json: @idea.errors, status: :unprocessable_entity
     end

@@ -1,4 +1,6 @@
 class CommentSerializer < ActiveModel::Serializer
-  belongs_to :user
-  belongs_to :idea
+    attributes :id, :subject, :body, :created_at, :user, :idea
+
+    belongs_to :user
+    belongs_to :idea
 end

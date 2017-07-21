@@ -1,3 +1,5 @@
 class TagSerializer < ActiveModel::Serializer
-  has_and_belongs_to_many :ideas
+  attributes :id, :name, :ideas
+
+  has_many :ideas
 end
