@@ -15,9 +15,9 @@ tags = Tag.create!([{
                    }])
 
 users = User.create!([
-                       { username: 'mickyginger', first_name: 'Mike', last_name: 'Hayden', email: 'mickyginger@ga.com' },
-                       { username: 'eisacke', first_name: 'Emily', last_name: 'Isacke', email: 'isake@ga.com' },
-                       { username: 'markyjangles', first_name: 'Marc', last_name: 'De Vois', email: 'devois@ga.com' }
+                       { username: 'mickyginger', first_name: 'Mike', last_name: 'Hayden', email: 'mickyginger@ga.com', password: 'password', password_confirmation: 'password' },
+                       { username: 'eisacke', first_name: 'Emily', last_name: 'Isacke', email: 'isake@ga.com', password: 'password', password_confirmation: 'password' },
+                       { username: 'markyjangles', first_name: 'Marc', last_name: 'De Vois', email: 'devois@ga.com', password: 'password', password_confirmation: 'password'  }
                      ])
 
 ideas = Idea.create!([
