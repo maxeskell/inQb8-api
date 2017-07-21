@@ -10237,3 +10237,225 @@ Processing by IdeasController#index as HTML
 Completed 200 OK in 105ms (Views: 91.0ms | ActiveRecord: 13.8ms)
 
 
+Started GET "/api/ideas" for 127.0.0.1 at 2017-07-21 15:44:08 +0100
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (0.9ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."idea_id" = $1[0m  [["idea_id", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "ideas_tags" ON "tags"."id" = "ideas_tags"."tag_id" WHERE "ideas_tags"."idea_id" = $1[0m  [["idea_id", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."idea_id" = $1[0m  [["idea_id", 2]]
+[active_model_serializers]   [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "ideas_tags" ON "tags"."id" = "ideas_tags"."tag_id" WHERE "ideas_tags"."idea_id" = $1[0m  [["idea_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."idea_id" = $1[0m  [["idea_id", 3]]
+[active_model_serializers]   [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "ideas_tags" ON "tags"."id" = "ideas_tags"."tag_id" WHERE "ideas_tags"."idea_id" = $1[0m  [["idea_id", 3]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 2]]
+[active_model_serializers]   [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 3]]
+[active_model_serializers]   [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 3]]
+[active_model_serializers]   [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 4]]
+[active_model_serializers]   [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 5]]
+[active_model_serializers]   [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 4]]
+[active_model_serializers]   [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 5]]
+[active_model_serializers]   [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (175.81ms)
+Completed 200 OK in 237ms (Views: 180.1ms | ActiveRecord: 36.4ms)
+
+
+Started GET "/api/ideas/2" for 127.0.0.1 at 2017-07-21 15:44:19 +0100
+Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."idea_id" = $1[0m  [["idea_id", 2]]
+[active_model_serializers]   [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "ideas_tags" ON "tags"."id" = "ideas_tags"."tag_id" WHERE "ideas_tags"."idea_id" = $1[0m  [["idea_id", 2]]
+[active_model_serializers]   [1m[36mIdea Load (0.8ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 3]]
+[active_model_serializers]   [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 4]]
+[active_model_serializers]   [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 5]]
+[active_model_serializers]   [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers] Rendered IdeaSerializer with ActiveModelSerializers::Adapter::Attributes (32.25ms)
+Completed 200 OK in 80ms (Views: 28.2ms | ActiveRecord: 33.5ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-21 15:52:25 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"max", "password"=>"[FILTERED]", "authentication"=>{"email"=>"max", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "max"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 7ms (Views: 5.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-21 15:52:59 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"mickyginger", "password"=>"[FILTERED]", "authentication"=>{"email"=>"mickyginger", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mickyginger"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-21 15:53:08 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"mickyginger", "password"=>"[FILTERED]", "authentication"=>{"email"=>"mickyginger", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mickyginger"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-21 15:53:24 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"mickyginger", "password"=>"[FILTERED]", "authentication"=>{"email"=>"mickyginger", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mickyginger"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 401 Unauthorized in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-21 15:53:25 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"mickyginger", "password"=>"[FILTERED]", "authentication"=>{"email"=>"mickyginger", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mickyginger"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 401 Unauthorized in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-21 15:53:52 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"mickyginger@ga.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"mickyginger@ga.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mickyginger@ga.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."idea_id" = $1[0m  [["idea_id", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "ideas_tags" ON "tags"."id" = "ideas_tags"."tag_id" WHERE "ideas_tags"."idea_id" = $1[0m  [["idea_id", 1]]
+[active_model_serializers]   [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."idea_id" = $1[0m  [["idea_id", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "ideas_tags" ON "tags"."id" = "ideas_tags"."tag_id" WHERE "ideas_tags"."idea_id" = $1[0m  [["idea_id", 1]]
+[active_model_serializers]   [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."idea_id" = $1[0m  [["idea_id", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "ideas_tags" ON "tags"."id" = "ideas_tags"."tag_id" WHERE "ideas_tags"."idea_id" = $1[0m  [["idea_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (21.1ms)
+Completed 200 OK in 85ms (Views: 19.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/ideas" for 127.0.0.1 at 2017-07-21 15:53:52 +0100
+Processing by IdeasController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."idea_id" = $1[0m  [["idea_id", 1]]
+[active_model_serializers]   [1m[36mTag Load (7.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "ideas_tags" ON "tags"."id" = "ideas_tags"."tag_id" WHERE "ideas_tags"."idea_id" = $1[0m  [["idea_id", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."idea_id" = $1[0m  [["idea_id", 2]]
+[active_model_serializers]   [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "ideas_tags" ON "tags"."id" = "ideas_tags"."tag_id" WHERE "ideas_tags"."idea_id" = $1[0m  [["idea_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."idea_id" = $1[0m  [["idea_id", 3]]
+[active_model_serializers]   [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "ideas_tags" ON "tags"."id" = "ideas_tags"."tag_id" WHERE "ideas_tags"."idea_id" = $1[0m  [["idea_id", 3]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 2]]
+[active_model_serializers]   [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 3]]
+[active_model_serializers]   [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 3]]
+[active_model_serializers]   [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 4]]
+[active_model_serializers]   [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 5]]
+[active_model_serializers]   [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 4]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 5]]
+[active_model_serializers]   [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (99.24ms)
+Completed 200 OK in 105ms (Views: 89.6ms | ActiveRecord: 14.6ms)
+
+
+Started POST "/api/register" for 127.0.0.1 at 2017-07-21 15:55:27 +0100
+Processing by AuthenticationsController#register as HTML
+  Parameters: {"username"=>"max", "email"=>"max", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"username"=>"max", "email"=>"max", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Unpermitted parameter: :authentication
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "max"], ["LIMIT", 1]]
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "max"], ["email", "max"], ["created_at", "2017-07-21 14:55:27.174449"], ["updated_at", "2017-07-21 14:55:27.174449"], ["password_digest", "$2a$10$PenhyNn4oAVTOcR8IjO/9euxtDnGS5aDqSE4VzIhzagrCUCUALvcS"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers]   [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (5.1ms)
+Completed 200 OK in 76ms (Views: 4.9ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-21 15:55:30 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"max", "password"=>"[FILTERED]", "authentication"=>{"email"=>"max", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "max"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers]   [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.61ms)
+Completed 200 OK in 70ms (Views: 5.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/ideas" for 127.0.0.1 at 2017-07-21 15:55:31 +0100
+Processing by IdeasController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mIdea Load (3.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+[active_model_serializers]   [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."idea_id" = $1[0m  [["idea_id", 1]]
+[active_model_serializers]   [1m[36mTag Load (4.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "ideas_tags" ON "tags"."id" = "ideas_tags"."tag_id" WHERE "ideas_tags"."idea_id" = $1[0m  [["idea_id", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mComment Load (2.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."idea_id" = $1[0m  [["idea_id", 2]]
+[active_model_serializers]   [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "ideas_tags" ON "tags"."id" = "ideas_tags"."tag_id" WHERE "ideas_tags"."idea_id" = $1[0m  [["idea_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."idea_id" = $1[0m  [["idea_id", 3]]
+[active_model_serializers]   [1m[36mTag Load (1.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "ideas_tags" ON "tags"."id" = "ideas_tags"."tag_id" WHERE "ideas_tags"."idea_id" = $1[0m  [["idea_id", 3]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 2]]
+[active_model_serializers]   [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 3]]
+[active_model_serializers]   [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 3]]
+[active_model_serializers]   [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 4]]
+[active_model_serializers]   [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 5]]
+[active_model_serializers]   [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 4]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" INNER JOIN "ideas_tags" ON "ideas"."id" = "ideas_tags"."idea_id" WHERE "ideas_tags"."tag_id" = $1[0m  [["tag_id", 5]]
+[active_model_serializers]   [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mCACHE Idea Load (0.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (104.51ms)
+Completed 200 OK in 114ms (Views: 88.4ms | ActiveRecord: 24.8ms)
+
+
