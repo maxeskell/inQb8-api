@@ -24,6 +24,7 @@ gem 'httparty'
 gem 'carrierwave'
 gem 'carrierwave-base64'
 gem 'fog-aws'
+gem 'wdi_api_controller'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

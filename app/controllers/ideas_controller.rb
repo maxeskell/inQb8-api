@@ -16,7 +16,7 @@ class IdeasController < ApplicationController
 
   # POST /ideas
   def create
-    @idea = Idea.new(idea_params)
+    @idea = Idea.new(Uploader.upload(idea_params))
 
     if @idea.save
       render json: @idea, status: :created, location: @idea
@@ -47,6 +47,6 @@ class IdeasController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def idea_params
-      params.require(:idea).permit(:title, :pitch, :description, :image, :campaign_duration, :who_we_need, :benefits_for_you, user_id, "lovers_ids"=>[], "joiners_ids"=>[], "tags_ids"=>[])
+      params.require(:idea).permit(:title, :pitch, :description, :image, :campaign_duration, :who_we_need, :benefits_for_you, user_id, :base64, "lovers_ids"=>[], "joiners_ids"=>[], "tags_ids"=>[])
     end
 end

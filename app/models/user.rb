@@ -12,4 +12,7 @@ class User < ApplicationRecord
   def oauth_login?
     github_id.present? || facebook_id.present?
   end
+
+  mount_uploader :image, ImageUploader
+  
  end

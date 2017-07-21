@@ -13,4 +13,6 @@ class Idea < ApplicationRecord
   validates :who_we_need, length: { minimum: 2, maximum: 250 }, allow_blank: false
   validates :benefits_for_you, length: { minimum: 2, maximum: 250 }, allow_blank: false
 
+  mount_uploader :image, ImageUploader
+
 end
