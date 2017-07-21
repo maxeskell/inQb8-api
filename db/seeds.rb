@@ -5,13 +5,13 @@ end
 tags = Tag.create!([{
                      name: 'HR'
                    }, {
-                     name: 'Ops'
+                     name: 'operations'
                    }, {
-                     name: 'Finance'
+                     name: 'finance'
                    }, {
-                     name: 'Product developent'
+                     name: 'strategy'
                    }, {
-                     name: 'Risk'
+                     name: 'risk'
                    }])
 
 users = User.create!([
