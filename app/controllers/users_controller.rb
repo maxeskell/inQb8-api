@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    render json: @user
+    render json: @user, include: ['ideas', 'comments', 'tags']
   end
 
   # POST /users
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
-    if @user.update(user_params)
+    if @user.update(Uploader.upload(user_params))
       render json: @user, include: ['ideas', 'comments', 'tags']
     else
       render json: @user.errors, status: :unprocessable_entity
@@ -47,6 +47,6 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :username, :email, :image, :github_id, :facebook_id, :base64, "ideas_loved_ids" =>[], "ideas_joined_ids" =>[])
+      params.permit(:first_name, :last_name, :username, :email, :image, :github_id, :facebook_id, :base64, ideas_loved_ids: [], ideas_joined_ids: [])
     end
 end
