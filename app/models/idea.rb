@@ -14,5 +14,4 @@ class Idea < ApplicationRecord
   validates :target, presence: true, numericality: { only_integer: true }
   validates :who_we_need, length: { minimum: 2, maximum: 250 }, presence: true
   validates :campaign_duration, presence: true, numericality: { only_integer: true }
-
 end

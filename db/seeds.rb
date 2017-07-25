@@ -5,7 +5,7 @@ end
 tags = Tag.create!([{
                      name: 'HR'
                    }, {
-                     name: 'Operations'
+                     name: 'Ops'
                    }, {
                      name: 'Finance'
                    }, {

@@ -22,7 +22,7 @@ class IdeasController < ApplicationController
     if @idea.save
       render json: @idea, status: :created, location: @idea
     else
-      render json: { errors: @idea.errors.full_messages, status: :unprocessable_entity }
+      render json: { errors: @idea.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -31,7 +31,7 @@ class IdeasController < ApplicationController
     if @idea.update(Uploader.upload(idea_params))
       render json: @idea, include: ['user', 'comments', 'tags']
     else
-      render json: { errors: @idea.errors.full_messages, status: :unprocessable_entity }
+      render json: { errors: @idea.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
