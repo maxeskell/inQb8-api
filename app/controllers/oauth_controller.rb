@@ -42,6 +42,8 @@ class OauthController < ApplicationController
           headers: { 'Accept' => 'application/json'}
           }).parsed_response
 
+          p token
+
           profile = HTTParty.get('https://graph.facebook.com/v2.5/me?fields=id,name,email,picture.height(961)', {
             query: token,
             headers: {
@@ -49,6 +51,8 @@ class OauthController < ApplicationController
               'Accept' => 'application/json'
             }
             }).parsed_response
+
+            p profile
 
 
             user = User.where(facebook_id: profile["id"]).first
