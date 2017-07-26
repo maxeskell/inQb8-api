@@ -5,6 +5,11 @@ class Auth
 
   def self.issue(payload, expiry_in_minutes=60*24*30)
     payload[:exp] = expiry_in_minutes.minutes.from_now.to_i
+
+    p payload
+    p auth_secret
+    p ALGORITHM
+    
     JWT.encode(payload, auth_secret, ALGORITHM)
   end
 
