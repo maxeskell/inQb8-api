@@ -9,7 +9,7 @@ class Auth
     p payload
     p auth_secret
     p ALGORITHM
-    
+
     JWT.encode(payload, auth_secret, ALGORITHM)
   end
 
