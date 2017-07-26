@@ -35,7 +35,7 @@ class OauthController < ApplicationController
         token = HTTParty.post('https://graph.facebook.com/v2.8/oauth/access_token', {
           query: {
             client_id: ENV["FB_OAUTH_INCUBATE_ID"],
-            redirect_uri: 'http://localhost:7000/',
+            redirect_uri: 'https://incubate.herokuapp.com/ideas',
             client_secret: ENV["FB_OAUTH_INCUBATE_SECRET"],
             code: params[:code]
           },

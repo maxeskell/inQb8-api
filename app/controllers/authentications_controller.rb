@@ -16,7 +16,7 @@ class AuthenticationsController < ApplicationController
       token = Auth.issue(id: user.id)
       render json: { token: token, user: UserSerializer.new(user) }, status: :ok
     else
-      render json: { errors: ['Invalid login credentials.'] }, status: 401
+      render json: { errors: ['Invalid login credentials. Please try again.'] }, status: 401
     end
   end
 
