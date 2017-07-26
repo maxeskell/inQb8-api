@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :ideas
   has_and_belongs_to_many :ideas_loved, class_name: "Idea", join_table: "ideas_users_love"
   has_and_belongs_to_many :ideas_joined, class_name: "Idea", join_table: "ideas_users_join"
+
   has_secure_password validations: false
 
   validates :username, presence: true

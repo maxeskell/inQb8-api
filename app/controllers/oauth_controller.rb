@@ -35,13 +35,12 @@ class OauthController < ApplicationController
         token = HTTParty.post('https://graph.facebook.com/v2.8/oauth/access_token', {
           query: {
             client_id: ENV["FB_OAUTH_INCUBATE_ID"],
-            redirect_uri: ENV["APP_URL"] || "http://localhost:7000",
+            redirect_uri: ENV["APP_URL"] + '/' || "http://localhost:7000/",
             client_secret: ENV["FB_OAUTH_INCUBATE_SECRET"],
             code: params[:code]
           },
           headers: { 'Accept' => 'application/json'}
           }).parsed_response
-
 
           profile = HTTParty.get('https://graph.facebook.com/v2.5/me?fields=id,name,email,picture.height(961)', {
             query: token,
@@ -52,11 +51,11 @@ class OauthController < ApplicationController
             }).parsed_response
 
 
-            user = User.where("email = :email OR facebook_id = :facebook_id", email: profile["email"], facebook_id: profile["id"]).first
+            user = User.where(facebook_id: profile["id"]).first
 
             user = User.new username: profile["name"], email: profile["email"] unless user
 
-            user[:facebook_id] = profile["id"]
+            user.facebook_id = profile["id"]
 
             if user.save
               token = Auth.issue({ id: user.id })
