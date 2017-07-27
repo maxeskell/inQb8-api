@@ -13,5 +13,6 @@ class Idea < ApplicationRecord
   validates :image, presence: true
   validates :target, presence: true, numericality: { only_integer: true }
   validates :who_we_need, length: { minimum: 5, maximum: 250 }, presence: true
+  validates :benifits_for_you, length: { minimum: 5, maximum: 250 }, presence: true
   validates :campaign_duration, presence: true, numericality: { only_integer: true }
 end
